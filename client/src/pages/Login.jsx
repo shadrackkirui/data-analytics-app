@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       // Ensure this URL matches your backend port
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', {
+      const { data } = await axios.post('https://data-analytics-app-uymy.onrender.com/api/auth/login', {
         email,
         password
       });

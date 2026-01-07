@@ -25,8 +25,7 @@ app.get('/', (req, res) => {
 
 // --- AUTH ROUTES ---
 
-//--register route
-// --- ADD THIS NEW REGISTRATION ROUTE ---
+// ---   NEW REGISTRATION ROUTE ---
 app.post('/api/auth/register', async (req, res) => {
   const { name, email, password, role } = req.body;
   

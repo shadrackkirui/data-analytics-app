@@ -9,7 +9,7 @@ const LandingPage = () => {
   useEffect(() => {
     const fetchPublicStats = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/public/stats');
+        const { data } = await axios.get('https://data-analytics-app-uymy.onrender.com/api/public/stats');
         setStats(data);
       } catch (error) {
         console.error("Could not fetch public stats", error);

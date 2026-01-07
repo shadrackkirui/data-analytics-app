@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import io from 'socket.io-client';
 import { useAuth } from '../context/AuthContext';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://data-analytics-app-uymy.onrender.com');
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth();
@@ -13,7 +13,7 @@ const AdminDashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/analytics', {
+      const { data } = await axios.get('https://data-analytics-app-uymy.onrender.com/api/analytics', {
         headers: { Authorization: `Bearer ${user.token}` }
       });
       setStats(data);
@@ -23,7 +23,7 @@ const AdminDashboard = () => {
   };
 
   useEffect(() => {
-    fetchStats();
+    fetchStats(); // Initial fetch
     socket.on('new_submission', () => fetchStats());
     return () => socket.off('new_submission');
   }, []);

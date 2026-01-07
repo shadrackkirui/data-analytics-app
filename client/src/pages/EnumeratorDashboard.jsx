@@ -12,7 +12,7 @@ const EnumeratorDashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/submit', {
+      await axios.post('https://data-analytics-app-uymy.onrender.com/api/submit', {
         householdId: formData.householdId,
         location: { county: formData.county, ward: formData.ward },
         age: Number(formData.age),
