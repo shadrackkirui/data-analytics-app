@@ -18,6 +18,11 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+// --- Home url ---
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
 // --- AUTH ROUTES ---
 
 //--register route
