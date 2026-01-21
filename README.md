@@ -4,7 +4,7 @@ A full-stack web application organized into a client-server architecture.
 
 ## Project Structure
 
-*   **client/**: The frontend application (likely React based on dependencies).
+*   **client/**: The frontend application (React based on dependencies).
 *   **server/**: The backend API (Node.js/Express).
 
 ## Getting Started
